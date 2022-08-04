@@ -25,7 +25,6 @@ export default function Home() {
       <h1>hello World</h1>
       <Search setSearch={setSearch} />
       <Card  data={data}/>
-      <button className="btn btn-primary">es hora del duelo</button>
     </>
   )
 }

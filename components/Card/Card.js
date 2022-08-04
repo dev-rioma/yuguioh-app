@@ -1,9 +1,17 @@
 import Image from "next/image"
+import { useState } from "react"
 
+const imagePerRow = 10
 const Card = ({ data }) => {
+  const [ next, setNext] = useState(imagePerRow)
   let display
+
+  const handleMoreCard = () => {
+    setNext(next + imagePerRow)
+  }
+  
   if (data) {
-    display = data.slice(0,20).map( (card) => {
+    display = data.slice(0,next).map( (card) => {
       let { id, name, type, desc, race, archetype, card_sets, card_images } = card
       return (
         <div key={id}>
@@ -102,7 +110,13 @@ const Card = ({ data }) => {
 
         `}
       </style>
-      <div className="container-list-card">             {display} 
+      <div className="container-list-card">             
+        {display} 
+      </div>
+      <div className="container-load d-flex justify-content-center m-5">
+        <button className="btn btn-outline-warning rounded-circle" onClick={handleMoreCard}>
+          <Image src="/mileniumeye.png" width={30} height={30}/>
+        </button>
       </div>
     </div>
   );
