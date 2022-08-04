@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import Navbar from "../components/Navbar/Navbar"
 import Card from "../components/Card/Card"
 import Search from "../components/Search/Search"
+import Footer from "../components/Footer/Footer"
+import ModalBtn from "../components/ModalBtn/ModalBtn"
+import Layout from "../components/Layout/Layout"
 
 export default function Home() {
   let [fetchedData, updateFetchedData] = useState([])
@@ -20,11 +24,17 @@ export default function Home() {
  
   
   return (
-    <>
-      <Navbar/>
-      <h1>hello World</h1>
-      <Search setSearch={setSearch} />
-      <Card  data={data}/>
+    <>  
+      <Layout>
+        <div className="d-flex justify-content-center mb-4 mt-2">
+          Trading Card
+        </div>
+        <Search setSearch={setSearch} />
+        <div className="d-flex justify-content-center m-3">
+          <ModalBtn />
+        </div>
+        <Card  data={data}/>
+      </Layout>
     </>
   )
 }

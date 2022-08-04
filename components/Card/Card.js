@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { useState } from "react"
 
 const imagePerRow = 10
@@ -61,7 +62,7 @@ const Card = ({ data }) => {
 
           <div className="card-container">
             <div className="container-image">
-              <Image className="card-image" src={card_images[0].image_url}  alt={name} width={90} height={120} objectFit="fill" />
+                <Image className="card-image" src={card_images[0].image_url}  alt={name} width={90} height={120} objectFit="fill" />
             </div>
             <div className="card-title" key={name}>
               <ul>
@@ -114,7 +115,7 @@ const Card = ({ data }) => {
         {display} 
       </div>
       <div className="container-load d-flex justify-content-center m-5">
-        <button className="btn btn-outline-warning rounded-circle" onClick={handleMoreCard}>
+        <button className="btn btn-outline-warning rounded-circle d-flex justify-content-center p-3" onClick={handleMoreCard}>
           <Image src="/mileniumeye.png" width={30} height={30}/>
         </button>
       </div>
