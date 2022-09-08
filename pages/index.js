@@ -29,6 +29,9 @@ export default function Home() {
         <div className="d-flex justify-content-center mb-4 mt-2">
           Trading Card
         </div>
+        <div>
+          <button className="btn-primary">nuevo boton</button>
+        </div>
         <Search setSearch={setSearch} />
         <div className="d-flex justify-content-center m-3">
           <ModalBtn />
